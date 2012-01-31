@@ -1,3 +1,4 @@
+# Have a container for your
 mkdir /tmp/drush-make-demo
 
 # The absolute bare minimum: nothing
@@ -24,7 +25,10 @@ drush make 06_libraries.make /tmp/drush-make-demo/libraries
 # Recursive makefiles can be used by features, modules or install profiles
 drush make 07_install-profile.make /tmp/drush-make-demo/install-profile
 
-# Run a Drupal 7.x install
-drush make 08_site-install.make /tmp/drush-make-demo/d7-install
-cd /tmp/drush-make-demo/d7-install
-drush site-install
+# Run a Drupal 7.x install on this distribution
+# Beforehand, create a database with
+# DROP DATABASE IF EXISTS d7_oxdug; CREATE DATABASE d7_oxdug; GRANT ALL on d7_oxdug.* to 'd7'@localhost IDENTIFIED BY 'd7';
+# There's also a sample vhost available in this git repository. To use that,
+# you'll need to add '127.0.0.1 oxdug.local' to your /etc/hosts too.
+cd /tmp/drush-make-demo/install-profile
+drush -r /tmp/drush-make-demo/install-profile site-install openpublish --db-url=mysqli://d7:d7@localhost/d7_oxdug --site-name="OxDUG OpenPublish"
