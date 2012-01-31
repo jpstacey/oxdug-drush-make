@@ -22,7 +22,7 @@ drush make 05_patches.make /tmp/drush-make-demo/patches
 drush make 06_libraries.make /tmp/drush-make-demo/libraries
 
 # Recursive makefiles can be used by features, modules or install profiles
-drush make 07_install-profile.make /tmp/drush-make-demo/open-atrium
+drush make 07_install-profile.make /tmp/drush-make-demo/install-profile
 
 # Run a Drupal 7.x install
 drush make 08_site-install.make /tmp/drush-make-demo/d7-install
