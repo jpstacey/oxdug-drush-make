@@ -1,30 +1,30 @@
 mkdir /tmp/drush-make-demo
 
 # The absolute bare minimum: nothing
-drush make /tmp/drush-make-demo/minimum 00_minimum.make --no-core
+drush make 00_minimum.make /tmp/drush-make-demo/minimum --no-core
 
 # Just core Drupal
-drush make /tmp/drush-make-demo/core-only 01_core-only.make
+drush make 01_core-only.make /tmp/drush-make-demo/core-only
 
 # Add a module plus some dependencies
-drush make /tmp/drush-make-demo/core-plus-views 02_core-plus-views.make
+drush make 02_core-plus-views.make /tmp/drush-make-demo/core-plus-views
 
 # Configure those module projects some more including git
-drush make /tmp/drush-make-demo/s-v-u 03_subdir-version-url.make --working-copy
+drush make 03_subdir-version-url.make /tmp/drush-make-demo/subdir-version-url --working-copy
 
 # Use a non-Drupal core e.g. Pressflow for D6.x
-drush make /tmp/drush-make-demo/pressflow 04_pressflow.make
+drush make 04_pressflow.make /tmp/drush-make-demo/pressflow 04_pressflow.make
 
 # Patch anything, even core....
-drush make /tmp/drush-make-demo/patches 05_patches.make
+drush make 05_patches.make /tmp/drush-make-demo/patches
 
 # Add some libraries
-drush make /tmp/drush-make-demo/libraries 06_libraries.make
+drush make 06_libraries /tmp/drush-make-demo/libraries
 
 # Recursive makefiles can be used by features, modules or install profiles
-drush make /tmp/drush-make-demo/open-atrium 07_install-profile.make
+drush make 07_install-profile.make /tmp/drush-make-demo/open-atrium
 
 # Run a Drupal 7.x install
-drush make /tmp/drush-make-demo/d7-install 08_site-install.make
+drush make 08_site-install.make /tmp/drush-make-demo/d7-install
 cd /tmp/drush-make-demo/d7-install
 drush site-install
