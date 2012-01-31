@@ -19,7 +19,7 @@ drush make 04_pressflow.make /tmp/drush-make-demo/pressflow 04_pressflow.make
 drush make 05_patches.make /tmp/drush-make-demo/patches
 
 # Add some libraries
-drush make 06_libraries /tmp/drush-make-demo/libraries
+drush make 06_libraries.make /tmp/drush-make-demo/libraries
 
 # Recursive makefiles can be used by features, modules or install profiles
 drush make 07_install-profile.make /tmp/drush-make-demo/open-atrium
