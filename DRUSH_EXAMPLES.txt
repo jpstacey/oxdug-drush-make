@@ -1,0 +1,32 @@
+##
+# Example drush commands
+#
+
+# Running drush on its own gets the full list of commands
+# Most commands have an abbreviated form for ease of use
+drush
+drush help
+drush help COMMANDNAME
+
+# Clearing caches at the command line: cache-clear (cc)
+drush cc                                   # Asks you which cache to clear
+drush cc all
+drush cc "theme registry"
+
+# Drupal system variables: variable-set (vset) and variable-get (vget)
+drush vget site_ # Get all variables whose names begin "site_"
+drush vset site_name "My new site name"    # Asks for confirmation
+drush vset -y site_name "My new site name" # -y flag forces operation
+
+# Accessing MySQL as the Drupal user
+drush sql-connect                          # Print connection string
+drush sql-cli                              # Start MySQL CLI
+drush sql-dump --gzip --result-file=FILE   # Dump out database as gzip
+
+# Downloading Drupal projects (dl) and enabling modules in them (en)
+# One Drupal project (e.g. cck) can contain many modules (e.g. nodereference)
+# Projects will download into sites/mysite/..., if run from there, or otherwise
+# into sites/all/...
+drush dl PROJECTNAME
+drush en MODULENAME
+drush pml                                  # List all modules
